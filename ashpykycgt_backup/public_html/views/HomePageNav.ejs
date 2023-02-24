@@ -1,0 +1,51 @@
+<!-- start navigation bar -->
+<nav class="nav
+          navbar navbar-expand-lg  px-sm-4 navbar-light "><!--bootstrap classes-->
+
+    <!-- Collapsing button navbar on small screens -->
+    <button class="navbar-toggler p-1" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- website logo -->
+    <a class="small-logo-link" href="/">   <img class="website-logo-small" src="/images/CompleteGreet/<%=System[0].LogoImage%>"></a>
+    <a class="large-logo-link" href="/">   <img class="website-logo-large ml-2" src="/images/CompleteGreet/<%=System[0].LogoImage%>"></a>
+
+    <!-- adjusting navbar at small screens //////////////////// -->
+    <ul class="nav-buttons navbar-nav small-screen">
+        <a href="/Register/User" class="user-link"><li style="font-size: 15px" class="nav-item user-info Button">Sign up</li></a>
+        <a href="/login" class="user-link"><li class="nav-item Button-Sub">Login</li></a>
+
+
+    </ul>
+    <!-- ////////////////////////////////////// -->
+    <!-- Collapsing div navbar on small screens -->
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <!-- navigation content -->
+        <ul class="nav-content navbar-nav ">
+            <!-- nav info class for the navbar items -->
+            <li class="nav-item "><a href="/" id="Home" class="Plans nav-link nav-info active">Home</a></li>
+            <li class="nav-item "><a href="/Pricing" id="Pricing" class="Articles nav-link nav-info">Pricing</a></li>
+            <li class="nav-item "><a href="/Demo" id="Demo" class="Store nav-link nav-info">Demo</a></li>
+            <!--                <li class="nav-item "><a href="" class="nav-link nav-info">ACTIVITIES</a></li>-->
+            <li class="nav-item "><a href="/Blogs" id="Blog" class="Community nav-link nav-info">Blog</a></li>
+            <li class="nav-item "><a href="/About-Us" id="About-Us" class="Community nav-link nav-info">About Us</a></li>
+        </ul>
+    </div><!--- div for collapsing navbar -->
+    <!-- user info -->
+    <ul class="nav-buttons navbar-nav larg-screen">
+        <!-- user info class for the user items (acc,cart) -->
+
+        <a href="/Register/User" class="user-link"><li class="nav-item d-flex align-items-center justify-content-center user-info Button mr-2">Sign up</li></a>
+        <a href="/login" class="user-link"><li class="nav-item Button-Sub pr-3">Login</li></a>
+
+
+
+        <!-- <li class="nav-item user-info"><a href="#" class="Acc-btn btn">ACCOUNT</a></li> -->
+
+
+    </ul>
+</nav>
+<!-- end navigation bar -->
+
+
+

@@ -1,0 +1,135 @@
+    <!-- start navigation bar -->
+    <nav class="nav
+          navbar navbar-expand-md  navbar-dark fixed-top"><!--bootstrap classes-->
+
+        <!-- Collapsing button navbar on small screens -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- website logo -->
+        <a class="small-logo-link" href="/">   <img class="website-logo-small" src="/images/img/tt.png"></a>
+        <a class="large-logo-link" href="/">   <img class="website-logo-large" src="/images/img/tt.png"></a>
+
+        <!-- adjusting navbar at small screens //////////////////// -->
+        <ul class="nav-buttons navbar-nav small-screen">
+            <!-- user info class for the user items (acc,cart) -->
+            <li class="nav-item user-cart user-cart-small Search-Open-btn"><a class="nav-link user-link Cursor"><i class="fa Search-Size fa-search" aria-hidden="true"></i></a></li>
+
+<!--            <li class="nav-item user-cart user-cart-small"><a href="#" class="nav-link user-link"><i class="fa fa-2x fa-shopping-cart" aria-hidden="true"></i></a></li>-->
+            <%if(isAuth){%>
+                <li class="nav-item user-info">
+                    <div class="dropdown">
+                        <% if (user.CroppedImage==undefined){ console.log(user.Image)%>
+                        <img src="/images/ahmed.jpg" class="Profile-Pic" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                        <%}else{%>
+                        <img src="/images/Coaches-Avatar/<%=user.id%>/<%=user.CroppedImage%>" class="Profile-Pic" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <%}%>
+                        <div class="Drop-Holder">
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <button class="dropdown-item" type="button"><a class="profile-links" href="/users/<%=user.id%>">Dashboard</a></button>
+                                <button class="dropdown-item" type="button"><a class="profile-links" href="/users/<%=user.id%>">My Orders</a></button>
+                                <button class="dropdown-item" type="button"><a class="profile-links" href="/users/<%=user.id%>/#list-messages">Messages <%if (unReadMessages!=0&&unReadMessages!=undefined){%><span class="text-white rounded px-1 ml-auto Not-Color"><%=unReadMessages%></span><%}%></a></button>
+                                <button class="dropdown-item" type="button"><a class="profile-links" href="/users/<%=user.id%>">Notifications <%if (unReadNotifications!=0&&unReadNotifications!=undefined){%><span class="text-white rounded px-1 ml-auto Not-Color"><%=unReadNotifications%></span><%}%></a></button>
+                                <button class="dropdown-item" type="button"><a class="profile-links" href="/logout">Log Out</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            <%}else {%>
+                <a href="/login" class="user-link"><li class="nav-item user-info "><i class="fa fa-2x fa-user" aria-hidden="true"></i></li></a>
+
+            <%}%>
+        </ul>
+        <!-- ////////////////////////////////////// -->
+        <!-- Collapsing div navbar on small screens -->
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <!-- navigation content -->
+            <ul class="nav-content navbar-nav">
+                <!-- nav info class for the navbar items -->
+                <li class="nav-item "><a href="/plans" class="Plans nav-link nav-info">PLANS</a></li>
+                <li class="nav-item "><a href="/Users/Articles" class="Articles nav-link nav-info">ARTICLES</a></li>
+                <li class="nav-item "><a href="" class="Store nav-link nav-info">STORE</a></li>
+<!--                <li class="nav-item "><a href="" class="nav-link nav-info">ACTIVITIES</a></li>-->
+                <li class="nav-item "><a href="" class="Community nav-link nav-info">COMMUNITY</a></li>
+            </ul>
+        </div><!--- div for collapsing navbar -->
+        <!-- user info -->
+        <ul class="nav-buttons navbar-nav larg-screen">
+            <!-- user info class for the user items (acc,cart) -->
+            <li class="nav-item user-cart Search-Open-btn"><a class="nav-link user-link Cursor"><i class="fa Search-Size fa-search" aria-hidden="true"></i></a></li>
+<!--            <li class="nav-item user-cart"><a href="#" class="nav-link user-link"><i class="fa fa-2x fa-shopping-cart" aria-hidden="true"></i></a></li>-->
+            <%if(isAuth){%>
+                <li class="nav-item user-info">
+                    <div class="dropdown">
+                        <% if (user.CroppedImage==undefined){ console.log(user.Image)%>
+                        <img src="/images/ahmed.jpg" class="Profile-Pic" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                        <%}else{%>
+                        <img src="/images/Coaches-Avatar/<%=user.id%>/<%=user.CroppedImage%>" class="Profile-Pic" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <%}%>
+                        <div class="Drop-Holder">
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <button class="dropdown-item" type="button"><a class="profile-links" href="/users/<%=user.id%>">Dashboard</a></button>
+                                <button class="dropdown-item" type="button"><a class="profile-links" href="/users/<%=user.id%>">My Orders</a></button>
+                                <button class="dropdown-item" type="button"><a class="profile-links" href="/users/<%=user.id%>/#list-messages">Messages <%if (unReadMessages!=0&&unReadMessages!=undefined){%><span class="text-white rounded px-1 ml-auto Not-Color"><%=unReadMessages%></span><%}%></a></button>
+                                <button class="dropdown-item" type="button"><a class="profile-links" href="/users/<%=user.id%>">Notifications <%if (unReadNotifications!=0&&unReadNotifications!=undefined){%><span class="text-white rounded px-1 ml-auto Not-Color"><%=unReadNotifications%></span><%}%></a></button>
+                                <button class="dropdown-item" type="button"><a class="profile-links" href="/logout">Log Out</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            <%}else {%>
+                <a href="/login" class="user-link"><li class="nav-item user-info "><i class="fa fa-2x fa-user" aria-hidden="true"></i></li></a>
+
+            <%}%>
+
+            <!-- <li class="nav-item user-info"><a href="#" class="Acc-btn btn">ACCOUNT</a></li> -->
+
+
+        </ul>
+    </nav>
+    <!-- end navigation bar -->
+    <!-- Start Search bar -->
+    <div class="Search-Container d-flex flex-column ">
+        <div class="Search-input my-3">
+            <div class="md-form" id="Search-input-container">
+                <input
+                        type="text"
+                        id="Search"
+                        class="form-control margin text-white"
+                        name="firstName"
+                        autocomplete="off"
+                >
+                <label for="Search">What are you looking for</label>
+                <!--        <div class="Invalid" id="Invalid-Name">plan name is too long</div>-->
+<div class="Search-Close-btn"></div>
+
+
+            </div>
+        </div>
+        <div class="Search-results overflow-auto ">
+<div class="blogs">
+    <div class="container">
+        <h4 class="text-white mb-2">Articles</h4>
+        <div class="row">
+            <div class="col-3">
+                <img class="w-75 rounded-circle " src="/images/img/tt.png">
+            </div>
+            <div class="col-9 pl-0 text-white">
+                <div class="blog-header text-break">
+                    <h5>text-breaktext-breaktext-breaktext-breaktext-breaktext-break</h5>
+                </div>
+                <div class="blog-description text-break">
+                    <p>welcome/images/img/tt.png/images/img/tt.png</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+        </div>
+    </div>
+    <!-- End Search bar -->
+
+

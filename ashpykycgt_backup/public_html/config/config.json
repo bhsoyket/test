@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "ashpykycgt",
+    "password": "wP3PWeSd4k",
+    "database": "ashpykycgt",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "r2davHWJXCVMVEz",
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "ashpykycgt",
+    "password": "wP3PWeSd4k",
+    "database": "ashpykycgt",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

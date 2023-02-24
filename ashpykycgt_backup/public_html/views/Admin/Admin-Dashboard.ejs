@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard</title>
+  <link rel="icon" href="../images/CompleteGreet/FavIcon.png">
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="/Assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/Assets/dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/" class="nav-link">Home</a>
+      </li>
+
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+<% include ./SideBar.ejs%>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Dashboard</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h5 class="m-0">Users & Subscribers</h5>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title">Edit Users & Check Subscribers</h6>
+
+                <p class="card-text">You can easily and edit all you users information and check subscribers statuses </p>
+                <a href="/CG-Admin/users" class="btn btn-primary">  <i class="nav-icon fas fa-users-cog mr-2"></i> Users</a>
+              </div>
+            </div>
+
+          </div>
+          <!-- /.col-md-6 -->
+          <div class="col-lg-6">
+            <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h5 class="m-0">Bubbles</h5>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title">View Bubbles</h6>
+
+                <p class="card-text">Check all bubbles that has been created and all it's information.</p>
+                <a href="/CG-Admin/bubbles" class="btn btn-primary">  <i class="nav-icon fa-regular fa-circle mr-2"></i> Bubbles</a>
+              </div>
+            </div>
+
+          </div>
+          <!-- /.col-md-6 -->
+          <div class="col-lg-6">
+
+            <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h5 class="m-0">Chat and Messages</h5>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title">View Chat and Messages</h6>
+
+                <p class="card-text">you can track all chats and messages that initiated through website</p>
+                <a href="/CG-Admin/Chats" class="btn btn-primary">  <i class="nav-icon fa-solid fa-comments mr-2"></i> Chats & Messages</a>
+              </div>
+            </div>
+          </div>
+          <!-- /.col-md-6 -->
+
+          <div class="col-lg-6">
+
+            <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h5 class="m-0">System & Plans</h5>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title">Edit System & Plan</h6>
+
+                <p class="card-text">you can now edit all system requirements and plans specifications</p>
+                <a href="/CG-Admin/System" class="btn btn-primary">  <i class="nav-icon fa-solid fa-server mr-2"></i> System & Plans</a>
+              </div>
+            </div>
+          </div>
+          <!-- /.col-md-6 -->
+          <div class="col-lg-6">
+
+            <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h5 class="m-0">Bugs</h5>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title">Check Users Bugs</h6>
+
+                <p class="card-text">you can now see all users feedback and issues they are facing while using service</p>
+                <a href="/CG-Admin/Bugs" class="btn btn-primary">  <i class="nav-icon fa-solid fa-bug mr-2"></i> Bugs</a>
+              </div>
+            </div>
+          </div>
+          <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+    <div class="p-3">
+      <h5>Title</h5>
+      <p>Sidebar content</p>
+    </div>
+  </aside>
+  <!-- /.control-sidebar -->
+
+
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+<script type="application/javascript" src="../js/fontawesome.js"></script>
+
+<!-- jQuery -->
+<script src="/Assets/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="/Assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/Assets/dist/js/AdminEdits.js"></script>
+<script src="/Assets/dist/js/adminlte.min.js"></script>
+</body>
+</html>

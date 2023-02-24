@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%=user.Name%>'s Profile</title>
+    <link rel="icon" href="/images/CompleteGreet/FavIcon.png">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/fontawesome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/mdb.css">
+    <link rel="stylesheet" href="/css/Input-Style.css">
+    <link rel="stylesheet" type="text/css" href="/css/Chatbox.css">
+    <link rel="stylesheet" type="text/css" href="/css/Sidebar.css">
+    <link rel="stylesheet" type="text/css" href="/css/Dashboard.css">
+    <link rel="stylesheet" type="text/css" href="/css/profile.css?v=12">
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="newbubblewidget  ">
+    <a class=" d-flex text-white justify-content-center align-items-center w-100 h-100" href="/users/bubble">  <i class="fa-solid fa-video fa-xl"></i></a>
+</div>
+
+
+<%  include UserNavBar.ejs%>
+<div class="page-container">
+    <div class="container-row d-flex flex-row ">
+        <%  include UsersSideBar.ejs%>
+        <div class="page-content-column mt-5 w-100 mr-lg-0">
+            <div class="row mr-0">
+             <div class="col-12">
+                 <div class="personal-info-container d-flex mb-4 flex-column align-items-center justify-content-center">
+                     <div style="" class="personal-header my-3">
+                         Personal information
+                     </div>
+                     <div class="profile-img my-3">
+                         <section class="image-holder">
+                             <% if (user.Image==undefined){ %>
+                                 <img id="avatar-pic" src="/images/CompleteGreet/FavIcon.png" >
+
+                             <%}else{%>
+                             <img id="avatar-pic" src="/files/users/<%=user.id%>/Avatar/<%=user.Image%>" alt=""/>
+                             <%}%>
+                             <%if (isAuth){ %>
+                                 <form id="upload" enctype="multipart/form-data" method="post" action="/upload">
+                                     <div class="file btn btn-lg btn-primary">
+                                         <i class="fa-solid fa-pen"></i>
+                                         <input type="file" name="Profile-Pic" id="image" accept="image/*" required />
+                                     </div>
+
+                                 </form>
+                             <%};%>
+                         </section>
+
+
+                     </div>
+                     <div style="" class="Pinfo d-flex flex-column justify-content-center align-items-center">
+                         <div class="name">
+                             <%=user.Name%>
+                         </div>
+                         <div class="email">
+                             <%=user.email%>
+                         </div>
+                     </div>
+<!--                     <div style="background: rgba(59,93,205,0.11) 0% 0% no-repeat padding-box;border-radius: 9px;"-->
+<!--                          class="logout mt-5 p-2 mx-auto w-75 d-flex justify-content-center w align-items-center">-->
+<!--                         <div class="d-flex flex-row justify-content-between flex-column w-100 p-1 ">-->
+<!--                             <div class="text text-nowrap mb-2">-->
+<!--                                 First Message:-->
+<!--                             </div>-->
+<!--                             <div class="d-flex flex-column justify-content-center align-items-center flex-md-row">-->
+<!--                                 <textarea id="GreetMsg-Input" placeholder="bubble video message " class="Msg-Input" type="text"><%=user.GreetMsg%></textarea>-->
+<!--                                 <button id="Save-GreetMsg" class="Button mt-3 mt-md-0 ml-md-3">-->
+<!--                                     Save-->
+<!--                                 </button>-->
+<!--                             </div>-->
+
+<!--                         </div>-->
+
+<!--                     </div>-->
+                     <div style="background: rgba(59,93,205,0.11) 0% 0% no-repeat padding-box;border-radius: 9px;"
+                          class="logout mt-3 p-2 mx-auto w-75 d-flex justify-content-center align-items-center">
+                         <div class="d-flex flex-row justify-content-between flex-column align-items-center ">
+                             <span style="font: normal normal bold 17px/20px Montserrat;color: #3B5DCD;"
+                                   class="mr-2 text-center mb-3">
+                                 Send conversations transcript of conversation to emails
+                             </span>
+                             <div class="center">
+                                 <input <%if(user.SendEmail){ %>checked<%}%> type="checkbox" id="SendEmail" >
+                             </div>
+                         </div>
+
+                     </div>
+                     <a class="w-100 mx- logutClass" href="/logout">
+                     <div style="background: rgba(59,93,205,0.11) 0% 0% no-repeat padding-box;border-radius: 9px;"
+                          class="logout my-5 p-2 mx-auto w-75 d-flex align-items-center">
+                        <div style="font: normal normal 500 17px/33px Montserrat; color: #FF2626;" class="text-danger">
+                            Log out
+                        </div>
+                         <i class="fa-solid ml-auto fa-xl fa-caret-right"></i>
+
+                     </div>
+                     </a>
+                 </div>
+             </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<% include toasts.ejs%>
+
+<script>
+     var Chats=<%-JSON.stringify(Chats)%>
+     var UserID='<%=user.id%>'
+         var UserPushNotification='<%=user.PushNotification%>'
+     var NotificationSound="<%=System[0].NotificationSound%>"
+</script>
+<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+<script type="application/javascript" src="/js/popper.min.js"></script>
+<script type="application/javascript" src="/js/bootstrap.min.js"></script>
+<script type="application/javascript" src="/js/mdb.min.js"></script>
+<script type="application/javascript" src="/js/fontawesome.js"></script>
+<script type="application/javascript" src="/js/Sidebar.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script type="application/javascript" src="/js/Dashboard.js?v=12"></script>
+
+
+</body>
+</html>
+
+

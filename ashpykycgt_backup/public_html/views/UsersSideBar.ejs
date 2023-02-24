@@ -1,0 +1,58 @@
+<div class="sidebar-column mr-5">
+    <aside id="sidebar-menu" class="main-sidebar">
+        <a class="nav-link aside-collapse-button" id="aside-collapse-button" role="button"><i class="fa fa-bars"></i></a>
+
+        <!-- Brand Logo -->
+        <!--    <a href="" class="brand-link">-->
+        <!--        <img src="/images/CompleteGreet/FavIcon.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">-->
+        <!--        <span class="brand-text font-weight-light">Admin Dashboard</span>-->
+        <!--    </a>-->
+        <!-- Sidebar -->
+        <div class="sidebar">
+
+            <!-- Sidebar user panel (optional) -->
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex flex-column align-items-center justify-content-center">
+                <div class="image p-0 mb-3 d-flex justify-content-center">
+                    <% if (user.Image==undefined){ %>
+                        <img id="avatar-pic" src="/images/CompleteGreet/FavIcon.png" >
+
+                    <%}else{%>
+                    <img id="avatar-pic" src="/files/users/<%=user.id%>/Avatar/<%=user.Image%>" alt=""/>
+                    <%}%>
+                </div>
+                <div class="profile-info p-2 d-flex flex-row align-items-center">
+                    <a href="/users/Profile" class="profile-text text-nowrap w-100 d-flex align-items-center">
+                        <span class="text-truncate"> <%=user.Name%></span>
+                        <span class="arrow-down ml-auto"></span>
+
+                    </a>
+
+                </div>
+            </div>
+
+
+
+            <!-- Sidebar Menu -->
+            <ul class="nav page-tabs nav-pills mb-3 flex-column" >
+                <li class="nav-item mb-3">
+                    <a class="nav-link active d-flex align-items-center pl-4 position-relative" id="DashBoard-tab"  href="/users/dashboard" ><i class="fa-solid fa-gauge sidebar-icon mr-2"></i> <span class="sidebar-link-text">Dashboard</span></a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link position-relative d-flex align-items-center pl-4" id="Live-Chat-tab" href="/users/livechat"><i class="fa-solid fa-headset mr-2 sidebar-icon"></i> <span class="sidebar-link-text">Live Chat</span></a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link position-relative d-flex align-items-center pl-4" id="Bubble-tab" href="/users/bubble" ><i class="fa-solid fa-video sidebar-icon mr-2"></i>  <span class="sidebar-link-text">New Bubble</span></a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link position-relative d-flex align-items-center pl-4" id="Team-tab"  href="/users/team" ><i class="fa-solid fa-users sidebar-icon mr-2"></i> <span class="sidebar-link-text">Team</span></a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link position-relative d-flex align-items-center pl-4" id="Subscription-tab" href="/users/subscription" ><i class="fa-solid fa-credit-card sidebar-icon mr-2"></i> <span class="sidebar-link-text">Subscription</span></a>
+                </li>
+            </ul>
+
+
+        </div>
+        <!-- /.sidebar -->
+    </aside>
+</div>

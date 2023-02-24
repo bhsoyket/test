@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo</title>
+    <link rel="icon" href="/images/CompleteGreet/FavIcon.png">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/fontawesome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/mdb.css">
+    <link rel="stylesheet" href="/css/Input-Style.css">
+    <link rel="stylesheet" href="/css/Bubble.css">
+    <link rel="stylesheet" type="text/css" href="/css/Chatbox.css">
+    <link rel="stylesheet" type="text/css" href="/css/Videos.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/HomePageNav.css">
+    <link rel="stylesheet" type="text/css" href="/css/Footer.css">
+    <link rel="stylesheet" type="text/css" href="/css/Demo.css">
+</head>
+<body>
+
+
+
+<%  include HomePageNav.ejs%>
+<div class="page-container">
+    <div class="Demo-Header-Text mt-5 d-flex flex-column justify-content-center align-items-center text-center">
+        <span class="orangetext">
+           What does a video bubble look like on your site?
+        </span>
+        <span class="bluetext">
+We’ll give you an exclusive preview right now!
+        </span>
+    </div>
+    <div class="Virtual-Browser container my-5">
+        <div style="min-height:500px" class="browser ">
+            <div class="browser-navigation-bar">
+                <i></i><i></i><i></i>
+                <!-- Place your URL into <input> below -->
+                <input class="browser-tab-input" value="https://yourwebsite.com" disabled />
+            </div>
+
+            <div style="height: 100vh" class="browser-container position-relative">
+                <!-- Place your content of any type here -->
+                <div class="Demo-container w-75 mx-auto mt-5">
+                    <div class="Demo-Text">
+                        Launch Your Video Bubble Preview Here:
+                    </div>
+                    <div class="demo-input">
+                        <label class="Input-Style auto-input-focus w-75 mx-auto d-block mt-4">
+                            <input autocomplete="off" id="Demo-Website" class="w-100 p-3" type="text" placeholder="https://www.example.com">
+                            <span class="multi-step-input-label" style="color: rgb(0, 0, 0);">Insert your website here</span>
+                        </label>
+                    </div>
+                    <div class="demo-Button mt-4 d-flex justify-content-center align-items-center">
+                        <button id="Demo-btn" class="Button ">
+                            Try it out
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <div id="Bubble-Body" style="transform: translateX(calc(-100% - 25px));filter: drop-shadow(0 0 6px rgba(0,0,0,0.2) );box-shadow: 0 12px 20px 0 rgba(0,0,0,0.2), 0 2px 4px 0 rgba(0,0,0,0.2);" class="Bubble-Body d-none">
+                <div class="Bubble-Inner-Container w-100 h-100 position-relative">
+                    <div class="Bubble-Video w-100 h-100">
+                        <video class="video-content  w-100 h-100" autoplay loop id="video-bubble" muted src="/videos/demo.mp4"></video>
+
+                    </div>
+                    <div class="Bubble-Video-Overlay">
+                        <div class="Bubble-Inner-Title text-white p-2">
+                            Hey!
+                        </div>
+                    </div>
+                    <div class="Bubble-external-overlay">
+
+                    </div>
+                </div>
+            </div>
+            <div style="right: 25px;filter: drop-shadow(0 0 6px rgba(0,0,0,0.2) );box-shadow: 0 12px 20px 0 rgba(0,0,0,0.2), 0 2px 4px 0 rgba(0,0,0,0.2);" class="Bubble-large-container demo-large-bubble go-down d-none">
+                <div class="multi-step-container h-100">
+                    <div class="Step-1 steps-transition h-100 w-100 z-4 position-absolute">
+                        <div class="video-container h-100">
+                            <video class="video-content h-100"  loop id="Large-container-video" src="/videos/demo.mp4"></video>
+                            <div id="play-btn" class="video-controls"><i class="fa-solid fa-play fa-xl"></i></div>
+                            <div id="pause-btn" class="video-controls"></div>
+                            <div id="mute-btn" class="video-controls"><i class="fa-solid fa-volume-high"></i></div>
+                            <div id="unmute-btn" class="video-controls"><i class="fa-solid fa-volume-xmark"></i></div>
+                            <!--                                                <div id="stop-btn" class="video-controls">STOP</div>-->
+                            <div id="replay-btn" class="video-controls"><i class="fa-solid fa-rotate-right fa-xl"></i></div>
+                            <div id="Exit-btn" class="video-controls exit-btn"><i class="fa-solid fa-xmark fa-xl"></i></div>
+                            <div class="video-progressbar">
+                                <span class="h-100"></span>
+                            </div>
+                            <div id="step-1-btn" class="start-live-chat-btn multi-step-btn">
+                                Start live chat
+                            </div>
+                            <div class="company-name">
+                                <a href="#">   Created with <b> Complete Greet</b></a>
+                            </div>
+                            <div class="video-overlay">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Step-2 steps-transition h-100 w-100 z-3 position-absolute">
+                        <div class="send-message-container h-100 w-100 position-relative">
+                            <!--                                                    <div class="live-chat-name pt-3">LIVE CHAT</div>-->
+                            <!--                                                    <div id="Exit-btn" class="video-controls exit-btn"><i class="fa-solid fa-xmark fa-xl"></i></div>-->
+                            <!--                                                    <div id="Back-btn" class="video-controls back-btn"><i class="fa-solid fa-arrow-left fa-xl"></i></div>-->
+                            <!--                                                    <div class="message-input ">-->
+                            <!--                                                        <label class="Input-Style auto-input-focus w-75 mx-auto d-block mt-4 h-100">-->
+                            <!--                                                            <textarea name="Start-Message" id="Start-Message" class="w-100 p-3" placeholder="Type here..."></textarea>-->
+                            <!--                                                            <span class="multi-step-input-label">Let's start chat</span>-->
+                            <!--                                                        </label>-->
+                            <!--                                                    </div>-->
+                            <div class="live-chat-name pt-3 mx-auto px-3 w-75">LIVE CHAT</div>
+                            <div id="Exit-btn" class="video-controls exit-btn"><i class="fa-solid fa-xmark fa-xl"></i></div>
+                            <div id="Back-btn" class="video-controls back-btn"><i class="fa-solid fa-arrow-left fa-xl"></i></div>
+                            <div class="message-input ">
+                                <label class="Input-Style auto-input-focus w-75 mx-auto d-block mt-4">
+                                    <input name="Name-Message" id="Name-Message" class="w-100 p-3" type="text" placeholder="Type here...">
+                                    <span  class="multi-step-input-label">Your Name</span>
+                                </label>
+                                <label class="Input-Style auto-input-focus w-75 mx-auto d-block mt-4">
+                                    <input name="Email-Message" id="Email-Message" class="w-100 p-3" type="email" placeholder="Type here...">
+                                    <span  class="multi-step-input-label">Your Email</span>
+                                </label>
+                                <div id="step-2-btn" style="bottom: auto" class="step-2-send-btn mt-2 mx-auto w-50 Button  multi-step-btn">
+                                    Send
+                                </div>
+                            </div>
+
+                            <!--                                                        <div id="start-live-chat" class="mx-auto w-50 Button  multi-step-btn">-->
+                            <!--                                                            Start live chat-->
+                            <!--                                                        </div>-->
+
+                        </div>
+                    </div>
+                    <div class="Step-3 steps-transition h-100 w-100 z-2 position-absolute">
+
+                        <div class="send-message-container h-100 w-100 position-relative">
+                            <div id="Exit-btn" class="video-controls exit-btn z-4"><i class="fa-solid fa-xmark fa-xl"></i></div>
+                            <div id="Back-btn" class="video-controls back-btn z-4"><i class="fa-solid fa-arrow-left fa-xl"></i></div>
+                            <div class="card h-100 card-danger direct-chat direct-chat-danger">
+                                <div class="card-header">
+                                    <h3 class="card-title w-75 mx-auto live-chat-name text-uppercase text-dark">Live Chat</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body p-0">
+                                    <!-- Conversations are loaded here -->
+                                    <div class="direct-chat-messages h-100">
+                                        <!-- Message. Default to the left -->
+                                        <div  class="direct-chat-msg">
+                                            <div class="direct-chat-infos clearfix">
+                                            </div>
+                                            <!-- /.direct-chat-infos -->
+                                            <img class="direct-chat-img" src="/images/CompleteGreet/FavIcon.png" alt="message user image">
+                                            <!-- /.direct-chat-img -->
+                                            <div  class="direct-chat-text sender-left-msg">
+                                                Is this Service really for free? That's unbelievable!
+                                            </div>
+                                            <!-- /.direct-chat-text -->
+                                        </div>
+                                        <!-- /.direct-chat-msg -->
+                                        <!-- Message to the right -->
+                                        <div class="direct-chat-msg right">
+                                            <div class="direct-chat-infos clearfix">
+                                                <!--                    <span class="direct-chat-name float-right">Sarah Bullock</span>-->
+                                                <!--                    <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>-->
+                                            </div>
+                                            <!-- /.direct-chat-infos -->
+                                            <!--                <img class="direct-chat-img" src="/docs/3.0/assets/img/user3-128x128.jpg" alt="message user image">-->
+                                            <!-- /.direct-chat-img -->
+                                            <div class="direct-chat-text">
+                                                You better believe it!
+                                            </div>
+                                            <!-- /.direct-chat-text -->
+                                        </div>
+                                        <!-- /.direct-chat-msg -->
+                                        <!-- Message. Default to the left -->
+                                        <div class="direct-chat-msg">
+                                            <div class="direct-chat-infos clearfix">
+                                                <!--                    <span class="direct-chat-name float-left">Alexander Pierce</span>-->
+                                                <!--                    <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>-->
+                                            </div>
+                                            <!-- /.direct-chat-infos -->
+                                            <img class="direct-chat-img" src="/images/CompleteGreet/FavIcon.png" alt="message user image">
+                                            <!-- /.direct-chat-img -->
+                                            <div class="direct-chat-text sender-left-msg">
+                                                Working with Complete Greet is great! Wanna join?
+                                            </div>
+                                            <!-- /.direct-chat-text -->
+                                        </div>
+                                        <!-- /.direct-chat-msg -->
+                                        <!-- Message to the right -->
+                                        <div class="direct-chat-msg right">
+                                            <div class="direct-chat-infos clearfix">
+                                                <!--                    <span class="direct-chat-name float-right">Sarah Bullock</span>-->
+                                                <!--                    <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>-->
+                                            </div>
+                                            <!-- /.direct-chat-infos -->
+                                            <!--                <img class="direct-chat-img" src="/docs/3.0/assets/img/user3-128x128.jpg" alt="message user image">-->
+                                            <!-- /.direct-chat-img -->
+                                            <div class="direct-chat-text">
+                                                I would love to.
+                                            </div>
+                                            <!-- /.direct-chat-text -->
+                                        </div>
+                                        <!-- /.direct-chat-msg -->
+                                    </div>
+
+                                    <!-- /.direct-chat-pane -->
+                                </div>
+                                <!-- /.card-body -->
+                                <div class="card-footer">
+                                    <form action="#" method="post">
+                                        <div class="input-group">
+                                            <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                                            <span class="input-group-append">
+          <button type="button" id="send-msg-btn" style="border: 0px" class="Button"><i class="fa-solid fa-paper-plane"></i></button>
+        </span>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- /.card-footer-->
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<%  include Footer.ejs%>
+
+
+<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+<script type="application/javascript" src="/js/popper.min.js"></script>
+<script type="application/javascript" src="/js/bootstrap.min.js"></script>
+<script type="application/javascript" src="/js/mdb.min.js"></script>
+<script type="application/javascript" src="/js/fontawesome.js"></script>
+<script type="application/javascript" src="/js/NavigationBar.js"></script>
+<script type="application/javascript" src="/js/Demo.js"></script>
+
+
+</body>
+</html>
+
+

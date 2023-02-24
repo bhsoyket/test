@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%=user.Name%>'s Profile</title>
+    <link rel="icon" href="/images/CompleteGreet/FavIcon.png">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/fontawesome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/mdb.css">
+    <link rel="stylesheet" href="/css/Input-Style.css">
+    <link rel="stylesheet" type="text/css" href="/css/Chatbox.css">
+    <link rel="stylesheet" type="text/css" href="/css/Sidebar.css">
+    <link rel="stylesheet" type="text/css" href="/css/Dashboard.css">
+    <link rel="stylesheet" type="text/css" href="/css/profile.css">
+</head>
+<body class="hold-transition sidebar-mini">
+
+
+<div class="newbubblewidget  ">
+    <a class=" d-flex text-white justify-content-center align-items-center w-100 h-100" href="/users/bubble">  <i class="fa-solid fa-video fa-xl"></i></a>
+</div>
+<%  include UserNavBar.ejs%>
+<div class="page-container">
+    <div class="container-row d-flex flex-row ">
+        <%  include UsersSideBar.ejs%>
+        <div class="page-content-column mt-5 w-100 mr-lg-0">
+            <div class="row mr-0">
+                <div class="col-12">
+                    <div style="height: 80vh;" class="personal-info-container personal-header d-flex flex-column align-items-center justify-content-center">
+                        Coming Soon
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<% include toasts.ejs%>
+
+<script>
+    var Chats=<%-JSON.stringify(Chats)%>
+    var UserID='<%=user.id%>'
+    var UserPushNotification='<%=user.PushNotification%>'
+    var NotificationSound="<%=System[0].NotificationSound%>"
+</script>
+<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+<script type="application/javascript" src="/js/popper.min.js"></script>
+<script type="application/javascript" src="/js/bootstrap.min.js"></script>
+<script type="application/javascript" src="/js/mdb.min.js"></script>
+<script type="application/javascript" src="/js/fontawesome.js"></script>
+<script type="application/javascript" src="/js/Sidebar.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script type="application/javascript" src="/js/Dashboard.js"></script>
+
+
+</body>
+</html>
+
+

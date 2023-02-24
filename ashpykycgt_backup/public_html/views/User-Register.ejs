@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register</title>
+    <link rel="icon" href="/images/CompleteGreet/FavIcon.png">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 shrink">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/mdb.css">
+    <link rel="stylesheet" href="/css/Input-Style.css">
+    <link rel="stylesheet" href="/css/wizard-form.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/Register.css">
+</head>
+<body>
+<div style="max-width: 90%;" class="Box-Container">
+    <div class="row justify-content-center m-0">
+        <div class="Join-OverView col-md-5">
+            <div class="container ">
+                <a href="/">
+                <img src="/images/CompleteGreet/Transparent-Side-Logo.png">
+                </a>
+                <div>
+                    <ul class="join-overview-list">
+                        <li class="mb-2">Officia voluptatibus incidunt qui et</li>
+                        <li class="mb-2">Voluptas eveniet consectetur quis architecto.</li>
+                        <li class="mb-2">Ab ipsum facere.</li>
+                    </ul>
+                    <div class="join-overview-text mt-3 font-weight-normal">
+                        Illo sint atque eos expedita. Exercitationem qui sunt qui ut doloremque a eos. Nulla laboriosam porro eos vero voluptas dolorem distinctio. Voluptatum inventore atque est non. Molestiae aperiam amet laboriosam est facilis repellendus architecto ea.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Join-Form col-md-6 p-0">
+            <div class="w-100  mt-4">
+                <h3 class="Register-Text ml-5">Register.</h3>
+                <span class="Register-SubText ml-5">Few simple steps and get register</span>
+            </div>
+
+            <div class="wrapper">
+                <form id="example-form" action="">
+                    <div id="wizard">
+                        <!-- SECTION 1 -->
+                        <h4></h4>
+                        <section>
+                            <span class="Step-Text">Step 1.</span>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8 d-flex justify-content-center Reg-err">
+                                    <% include validations.ejs%>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="Input-Style auto-input-focus w-100">
+                                    <input name="Name" id="Name" type="text" class="w-100" placeholder=" ">
+                                    <span>Your name*</span>
+                                </label>
+                                <div class="Invalid d-none" id="Invalid-Email"><i class="fa fa-exclamation-triangle text-danger"></i> please enter an email address</div>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="Input-Style auto-input-focus w-100">
+                                    <input name="Email" id="Email" value="<%=email%>" type="email" class="w-100" placeholder=" ">
+                                    <span>Your email*</span>
+                                </label>
+                                <div class="Invalid d-none" id="Invalid-Email"><i class="fa fa-exclamation-triangle text-danger"></i> please enter an email address</div>
+                            </div>
+                            <div class="col-md-12">
+                                <label id="show_hide_password" class="Input-Style position-relative auto-input-focus w-100">
+                                    <input name="Password" style="padding-right: 35px;" id="Password" type="password" class="w-100" placeholder=" ">
+                                    <span>Password*</span>
+                                    <div style="top: 3.5px; right: -5px; height: 100%; width: 35px;" class="input-group-addon d-flex position-absolute">
+                                        <a class="w-100 h-100 d-flex align-items-center" style=" color: #000D36; cursor: pointer"><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+                                    </div>
+                                </label>
+                                <ul class="password-req-ul">
+                                    <li class="six-char">6 character minimum</li>
+                                    <li class="one-no">At least one number</li>
+                                    <li class="u-l-case">Upper and lower case character</li>
+                                </ul>
+                                <div class="Invalid d-none" id="Invalid-Email"><i class="fa fa-exclamation-triangle text-danger"></i> please enter an email address</div>
+                            </div>
+
+                        </section>
+
+                        <!-- SECTION 2 -->
+                        <h4></h4>
+                        <section>
+                            <span class="Step-Text">Step 2.</span>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8 d-flex justify-content-center Reg-err">
+                                    <% include validations.ejs%>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="Input-Style auto-input-focus w-100">
+                                    <input name="SiteName" id="BusinessName" type="text" class="w-100" placeholder=" ">
+                                    <span>Business Name*</span>
+                                </label>
+                                <div class="Invalid d-none" id="Invalid-Email"><i class="fa fa-exclamation-triangle text-danger"></i> please enter an email address</div>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="Input-Style auto-input-focus w-100">
+                                    <input name="SiteName" id="Industry" type="text" class="w-100" placeholder=" ">
+                                    <span>Industry*</span>
+                                </label>
+                                <div class="Invalid d-none" id="Invalid-Email"><i class="fa fa-exclamation-triangle text-danger"></i> please enter an email address</div>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="Input-Style auto-input-focus w-100">
+                                    <input name="SiteURL" id="WebsiteURL" type="text" class="w-100" placeholder=" ">
+                                    <span>Website URL*</span>
+                                </label>
+                                <div class="Invalid d-none" id="Invalid-Email"><i class="fa fa-exclamation-triangle text-danger"></i> please enter an email address</div>
+                            </div>
+                            <div class="col-md-12">
+                                <select class="goal-options" id="goals">
+                                    <option value="0" selected disabled>Goals for using CompleteGreet</option>
+                                    <option value="1">Welcome your website visitors</option>
+                                    <option value="3">Personalize client communication</option>
+                                    <option value="4">Personal lead generation</option>
+                                    <option value="5">Customer Support</option>
+                                    <option value="6">Reduce churn</option>
+                                </select>
+                            </div>
+
+                        </section>
+
+                        <!-- SECTION 3 -->
+                        <h4></h4>
+                        <section>
+                            <span class="Step-Text">Step 3.</span>
+<!--                            <span class="widget-plugin" >Plugin</span>-->
+                            <div class="widget-text mb-2">When you create your first bubble, you will then be able to embed the script before the &lt;/head&gt; tag section. This will allow the bubble to appear on all pages.
+                                <br>
+                                <small>Below is just an example of the script. It is just a sample.</small>
+<!--                                <small>Below is just an example of the script. It is just a sample.</small>-->
+<!--                                To install, you will have to place a similar code to this before &lt;/body&gt; tag on every page of your website. you will be able to get code after bubble creation  <small>sample</small>-->
+                            </div>
+                            <div class="widget-script-container p-2">
+                                &lt;script&gt;window.CompleteGreet_ID="eb382bcb-d521-5ee9-9477-3177d5b4778c";(function (s, a, l, u, t, e) {t = a.createElement(l),e = a.getElementsByTagName(l)[0];t.async = 1;t.src = u;e.parentNode.insertBefore(t, e)})(window, document, 'script', 'https://completegreet.com/js/CompleteGreetInstallation.js');&lt;/script&gt;
+                            </div>
+<!--                            <div class="row  p-0 mt-3 align-items-center">-->
+<!--                                <div class="col-9 pr-0">-->
+<!--                                    <label class="Input-Style w-100 mb-0">-->
+<!--                                        <input name="DeveloperEmail" id="DeveloperEmail" type="text" class="w-100" placeholder=" ">-->
+<!--                                        <span>Your developer email*</span>-->
+<!--                                    </label>-->
+<!--                                    <div class="Invalid d-none" id="Invalid-Email"><i class="fa fa-exclamation-triangle text-danger"></i> please enter an email address</div>-->
+<!--                                </div>-->
+<!--                                <div class="col-3">-->
+<!--                                    <a id="send-developer-email"  class="email-send-button w-100 d-flex justify-content-center align-items-center text-white">-->
+<!--                                        Send-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                        </section>
+
+                    </div>
+                </form>
+            </div>
+            <a href="/login" class="have-acc d-block text-center mb-2">
+                Already have an account?
+            </a>
+        </div>
+    </div>
+    <% include validations.ejs%>
+</div>
+<script>
+</script>
+
+<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+<script type="application/javascript" src="/js/popper.min.js"></script>
+
+<script type="application/javascript" src="/js/bootstrap.min.js"></script>
+<script type="application/javascript" src="/js/mdb.min.js"></script>
+<script type="application/javascript" src="/js/jquery.steps.js"></script>
+
+<script type="application/javascript" src="/js/Register-Wizard-Form.js"></script>
+
+<script type="application/javascript" src="/js/Login.js"></script>
+</body>
+</html>
+
+

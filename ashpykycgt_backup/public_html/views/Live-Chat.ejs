@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Live Chat</title>
+    <link rel="icon" href="/images/CompleteGreet/FavIcon.png">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/fontawesome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/mdb.css">
+    <link rel="stylesheet" href="/css/Input-Style.css">
+    <link rel="stylesheet" type="text/css" href="/css/Chatbox.css">
+    <link rel="stylesheet" type="text/css" href="/css/Sidebar.css">
+    <link rel="stylesheet" type="text/css" href="/css/emojionearea.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/LiveChat.css">
+    <link rel="stylesheet" type="text/css" href="/css/Dashboard.css">
+</head>
+<body class="hold-transition sidebar-mini">
+
+
+
+<%  include UserNavBar.ejs%>
+<div class="page-container">
+    <div class="container-row d-flex flex-row ">
+        <%  include UsersSideBar.ejs%>
+        <div class="page-content-column mt-5 w-100 mr-lg-0">
+            <div class="row mr-0">
+                <div class="col-md-5 col-xl-4">
+                    <h2 class="text-left font-weight-bold">Chats</h2>
+                    <div class="Chats-Container ">
+                        <%if(Chats!=''){Chats.forEach(function (chat){%>
+                        <%if (visitorslimit==false){%>
+                        <div data-bubbleid="<%=chat.BubbleID%>" data-chatcookie="<%=chat.Chat_Cookie_id%>" class="Chat-Container mb-3 d-flex align-items-center p-3">
+                            <div class="chat-avatar rounded-circle mr-3">
+                                <img class="" src="/images/CompleteGreet/Avatar.jpg" alt="Avatar">
+                            </div>
+                            <div  class="Chat-Username text-truncate">
+                                <%=chat.ClientEmail%>
+                            </div>
+                            <div class="Notification-msg ml-2 <%if (unreadChats.includes(chat.id)){}else {%> d-none<%}%>"></div>
+                        </div>
+                        <%}else {%>
+                            <div  class="Un-Subs-Chat-Container mb-3 d-flex align-items-center p-3">
+                                <button  type="button" class="border-0 w-100 bg-white d-flex" data-toggle="modal" data-target="#exampleModalCenter">
+
+                                <div class="chat-avatar rounded-circle mr-3">
+                                    <img class="" src="/images/CompleteGreet/Avatar.jpg" alt="Avatar">
+                                </div>
+                                <div  class="Chat-Username text-truncate">
+                                    <%=chat.ClientEmail%>
+                                </div>
+                                </button>
+
+                            </div>
+
+                        <%}%>
+                        <%})}else {%>
+                        <div class="empty-msg">
+                            You Have No Messages to view
+
+                        </div>
+<%}%>
+                    </div>
+                </div>
+                <div class="col-md-7 col-xl-5 d-md-block hide-cont">
+                    <div class="Messages-Large-Container  d-none  position-relative flex-column mb-4">
+
+
+                    </div>
+                </div>
+                <div class="col-md-5 d-xl-none"></div>
+                <div class="col-xl-3 mb-5 d-none col-md-7">
+                    <div class="chat-user-info  d-flex  flex-column justify-content-center align-items-center p-3 w-100">
+                        <div class="mb-2 chat-avatar d-flex justify-content-center rounded-circle">
+                            <img src="/images/CompleteGreet/Avatar.jpg" alt="avatar" style="width: 60px">
+                        </div>
+                        <div style="font: normal normal bold 21px/25px Montserrat; color: #06227E;" class="user-name">
+
+                        </div>
+                        <div style="font: normal normal 500 15px/19px Montserrat; color: #06227E;" class="user-email mb-3">
+
+                        </div>
+                        <div style="font: normal normal bold 13px/16px Montserrat; color: #06227E;" class="current-page-title">
+                            Current page
+                        </div>
+                        <div style="font: normal normal 500 13px/16px Montserrat; color: #06227E;" class="current-page-name">
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<% include toasts.ejs%>
+<div class="modal fade p-0"id="Chat-Box" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bg-transparent border-0">
+            <div class="modal-body p-0">
+                <div class="Messages-Large-Container d-flex flex-column position-relative">
+                    <div class="Chat-Head-Name d-flex flex-row p-3">
+                        <div class="d-flex flex-column">
+                            <div>Maxine Trantow</div>
+                            <div style="font-size: 18px">Maxine Trantow</div>
+                        </div>
+                        <button type="button" class="close ml-auto " data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="fa-solid text-white fa-xmark fa-xl"></i></span>
+                        </button>
+                    </div>
+                    <div class="Messages-Container modal-msg-container position-relative px-3 pt-3">
+                        <div class="Sent-Message-Container">
+                            <div class="Sent-Message mb-3">
+                                asd dsak dsak; daslj adsl djsal sdal jsda as
+                            </div>
+                            <div class="Message-Date ml-auto">8:07</div>
+                        </div>
+                        <div class="Received-Message-Container">
+                            <div class="d-flex flex-row">
+                                <img src="/images/CompleteGreet/FavIcon.png" class="rounded-circle" alt="">
+                                <div class="Received-Message mb-3 position-relative">
+                                    dsakhdksa kdja hkjs dakjsa kask ask
+                                </div>
+                            </div>
+
+                            <div class="Message-Date">8:07</div>
+
+                        </div>
+
+                    </div>
+                    <div class="Message-Inputs">
+                        <input id="Msg-Input" class="Msg-Input d-block" type="text" placeholder="Type here...">
+                        <button disabled class="Send-msg-btn">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <div class="Message-Inputs-Background-box "></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Upgrage Plan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Upgrade your plan today to receive more chats!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <a href="/pricing" type="button" class="Button text-decoration-none text-white">Upgrade now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+     var Chats=<%-JSON.stringify(Chats)%>
+    var NotificationSound="<%=System[0].NotificationSound%>"
+     var UserPushNotification='<%=user.PushNotification%>'
+
+     var UserID=<%-UserID%>
+</script>
+<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+<script type="application/javascript" src="/js/popper.min.js"></script>
+<script type="application/javascript" src="/js/bootstrap.min.js"></script>
+<script type="application/javascript" src="/js/mdb.min.js"></script>
+<script type="application/javascript" src="/js/fontawesome.js"></script>
+<script type="application/javascript" src="/js/Sidebar.js"></script>
+<script type="application/javascript" src="/js/emojionearea.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script type="application/javascript" src="/js/LiveChat.js"></script>
+
+
+</body>
+</html>
+
+

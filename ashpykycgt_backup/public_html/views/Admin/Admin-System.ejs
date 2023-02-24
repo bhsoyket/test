@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin System & Plans</title>
+    <link rel="icon" href="../images/CompleteGreet/FavIcon.png">
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="/Assets/plugins/fontawesome-free/css/all.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="/Assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/Assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="/Assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/Assets/dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="/" class="nav-link">Home</a>
+            </li>
+        </ul>
+
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+            <!-- Notifications Dropdown Menu -->
+            <li class="nav-item">
+                <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- /.navbar -->
+    <% include ./SideBar.ejs%>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>System & Plans</h1>
+                    </div>
+                    <div class="col-sm-6">
+
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">System</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>Website Logo</th>
+                                        <th>Meta Title</th>
+                                        <th>Meta Description</th>
+                                        <th>Max. Video Upload Size (mb)</th>
+                                        <th>Notification Sound</th>
+                                        <th>Bubble ID</th>
+                                        <th>Edit</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <%System.forEach(system=>{%>
+                                    <tr>
+                                        <td data-gramm_editor="false" class="table-cell"><img style="width: 150px" src="/images/CompleteGreet/<%=system.LogoImage%>"></td>
+                                        <td data-gramm_editor="false" class="table-cell"><%=system.MetaTitle%></td>
+                                        <td data-gramm_editor="false" class="table-cell"><%=system.MetaDescription%></td>
+                                        <td data-gramm_editor="false" class="table-cell"><%=system.MaxVideoSize%></td>
+                                        <td data-gramm_editor="false" class="table-cell"><%=system.NotificationSound%></td>
+                                        <td data-gramm_editor="false" class="table-cell"><%=system.BubbleId%></td>
+                                        <td data-gramm_editor="false" class="table-cell"><button type="button" class="btn w-100 btn-success System-Modal-Btn" data-toggle="modal" data-target="#SystemInfoModal"><i class="fa-solid fa-pen-to-square"></i></button></td>
+
+                                    </tr>
+                                    <%})%>
+                                    </tbody>
+                                    <tfoot>
+                                    <tr>
+                                        <th>Website Logo</th>
+                                        <th>Meta Title</th>
+                                        <th>Meta Description</th>
+                                        <th>Max. Video Upload Size (mb)</th>
+                                        <th>Notification Sound</th>
+                                        <th>Bubble ID</th>
+                                        <th>Edit</th>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Plans</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table id="Plans" class="table table-bordered table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>Plan Name</th>
+                                        <th>Plan Price($)</th>
+                                        <th>Edit</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <%Plans.forEach(plan=>{%>
+                                    <tr>
+                                        <td data-gramm_editor="false" class="table-cell"><%=plan.PName%></td>
+                                        <td data-gramm_editor="false" class="table-cell"><%=plan.Price%></td>
+                                        <td data-gramm_editor="false" class="table-cell"><button type="button" class="btn w-100 btn-success Plan-Modal-Btn" data-plan="<%=JSON.stringify(plan)%>" data-toggle="modal" data-target="#PlansInfoModal"><i class="fa-solid fa-pen-to-square"></i></button></td>
+
+
+                                    </tr>
+                                    <%})%>
+                                    </tbody>
+                                    <tfoot>
+                                    <tr>
+                                        <th>Plan Name</th>
+                                        <th>Plan Price($)</th>
+                                        <th>Edit</th>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+        <div class="p-3">
+            <h5>Title</h5>
+            <p>Sidebar content</p>
+        </div>
+    </aside>
+    <!-- /.control-sidebar -->
+
+</div>
+<!-- ./wrapper -->
+<!-- ----------- Users Modal ------- -->
+
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade p-md-4 p-2" id="PlansInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg mw-100" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Plan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="FTitle">Plan Name</label>
+                            <input type="text" value="" class="form-control" id="PName"
+                                   aria-describedby="emailHelp" placeholder="Type...">
+                            <small id="emailHelp" class="form-text text-muted"></small>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="FTitle">Plan Price($)</label>
+                            <input type="number" value="" class="form-control" id="PPrice"
+                                   aria-describedby="emailHelp" placeholder="Type...">
+                            <small id="emailHelp" class="form-text text-muted"></small>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" id="PlanSave-Btn"  class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade p-md-4 p-2" id="SystemInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg mw-100" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit System</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="row">
+                        <div style="padding-bottom: 4px;" class="col-md-6 d-flex flex-column align-items-end">
+                            <label class="w-100" for="FTitle">Logo image</label>
+                            <form class="w-100" id="LogoForm" action="/">
+                            <div class="custom-file">
+
+                                <input type="file" class="custom-file-input" accept="image/*" name="LogoImg" id="LogoImg">
+                                <label class="custom-file-label" for="LogoImg">Choose Logo</label>
+                            </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="FTitle">Meta Title</label>
+                            <input type="text" value="<%=System[0].MetaTitle%>" class="form-control" id="MetaTitle"
+                                   aria-describedby="emailHelp" placeholder="Type...">
+                            <small id="emailHelp" class="form-text text-muted">For Home Page</small>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="FTitle">Meta Description</label>
+                            <input type="text" value="<%=System[0].MetaDescription%>" class="form-control" id="MetaDescription"
+                                   aria-describedby="emailHelp" placeholder="Type...">
+                            <small id="emailHelp" class="form-text text-muted">For Home Page</small>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="FTitle">Max. video upload size (mb)</label>
+                            <input type="number" value="<%=System[0].MaxVideoSize%>" class="form-control" id="MaxVideoSize"
+                                   aria-describedby="emailHelp" placeholder="Type...">
+                            <small id="emailHelp" class="form-text text-muted"></small>
+                        </div>
+                            <div style="padding-bottom: 4px;" class="col-md-6 d-flex flex-column align-items-end">
+                                <label class="w-100" for="FTitle">Notification Sound</label>
+                                <form class="w-100" id="NotificationSoundForm" action="/">
+                                    <div class="custom-file">
+
+                                        <input type="file" class="custom-file-input" accept="audio/*" name="NotificationSoundFile" id="NotificationSoundFile">
+                                        <label class="custom-file-label" for="LogoImg">Select Sound</label>
+                                    </div>
+                                </form>
+                            </div>
+                        <div class="col-md-6">
+                            <label for="FTitle">Bubble ID (Home page bubble)</label>
+                            <input type="number" value="<%=System[0].BubbleId%>" class="form-control" id="BubbleId"
+                                   aria-describedby="emailHelp" placeholder="Type...">
+                            <small id="emailHelp" class="form-text text-muted"></small>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" id="SystemSave-Btn"  class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- REQUIRED SCRIPTS -->
+<% include ../toasts.ejs%>
+<!-- jQuery -->
+<script src="/Assets/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="/Assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script type="application/javascript" src="../js/fontawesome.js"></script>
+
+<script src="/Assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/Assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="/Assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="/Assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="/Assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="/Assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="/Assets/plugins/jszip/jszip.min.js"></script>
+<script src="/Assets/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="/Assets/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="/Assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="/Assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="/Assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+<script>
+    $(function () {
+        $("#example1").DataTable({
+            "responsive": true, "lengthChange": false, "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print"]
+            // "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $("#Plans").DataTable({
+            "responsive": true, "lengthChange": false, "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print"]
+            // "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#Plans_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
+<!-- AdminLTE App -->
+<script src="/Assets/dist/js/AdminEdits.js"></script>
+<script src="/Assets/dist/js/adminlte.min.js"></script>
+</body>
+</html>

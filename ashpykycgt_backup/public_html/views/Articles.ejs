@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- website title -->
+    <title>Articles</title>
+    <link rel="icon" href="/images/img/tt.png">
+
+    <!-- website Description -->
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- css files -->
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/home-page-nav.css">
+    <link rel="stylesheet" href="/css/adjustingNav.css">
+
+    <link rel="stylesheet" href="/css/Articles.css">
+    <link rel="stylesheet" href="/css/mdb.css">
+    <link rel="stylesheet" href="/css/InputStyles.css">
+
+    <link rel="stylesheet" href="/css/Footer.css">
+
+
+
+
+</head>
+<!-- start website homepage -->
+<body>
+<header>
+    <%  include NavBar.ejs%>
+
+</header>
+
+<!-- Articles section  -->
+<div class="Articles">
+    <div class="container">
+        <h2 class="text-center">Articles</h2>
+        <div class="underline"></div>
+        <div class="row">
+            <%Blogs.forEach(function (blog) { %>
+
+                <div class="col-lg-4">
+                    <div class="Article">
+                        <a href="/users/Article/<%=blog.id%>">
+
+                        <div class="Article-Body">
+                            <figure class="Article-fig">
+                                <div class="Article-img">
+                                    <img src="<%=blog.Image%>">
+                                </div>
+                                <figcaption class="Article-info">
+                                    <div class="Article-Title">
+                                        <h3><%=blog.Title%></h3>
+                                    </div>
+                                    <div class="Article-Description">
+                                        <p><%=blog.Description%></p>
+
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+
+            <% }); %>
+
+        </div>
+    </div>
+</div>
+<!-- End of Articles  section -->
+
+<!-- Footer section -->
+<div class="Footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-6 mb-3">
+                <h4 class="footer-logo com mb-2">tamrenak</h4>
+                <ul class="footer-list">
+                    <li><a href="" class="footer-link">About Us</a></li>
+                    <li><a href="" class="footer-link">Contact Us</a></li>
+                    <li><a href="" class="footer-link">FAQ's</a></li>
+                    <li><a href="" class="footer-link">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <h4>Policy</h4>
+                <ul class="footer-list">
+                    <li><a href="" class="footer-link">Privacy Policy</a></li>
+                    <li><a href="" class="footer-link">Terms and Conditions</a></li>
+                    <li><a href="" class="footer-link">Advertise</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <h4>Are You A Coach?</h4>
+                <a href="" class="footer-link">Join tamrenak Now</a>
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <h4>Social Media</h4>
+                <a class="social-icon footer-link" href="#"> <i class="fa fa-2x fa-facebook"></i></a>
+                <a class="social-icon footer-link" href="#"> <i class="fa fa-2x fa-instagram" aria-hidden="true"></i></a>
+                <a class="social-icon footer-link" href="#"> <i class="fa fa-2x fa-youtube-play" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+<script type="application/javascript" src="/js/bootstrap.min.js"></script>
+<script type="application/javascript" src="/js/mdb.min.js"></script>
+<script type="text/javascript" src="/js/navbarEdit.js"></script>
+
+<script type="text/javascript" src="/js/Articles.js"></script>
+
+
+</body>
+</html>
+

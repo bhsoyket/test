@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Check out</title>
+    <link rel="icon" href="/images/CompleteGreet/FavIcon.png">
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/fontawesome.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/checkout.css" />
+    <script>
+             var pid = '<%=pid%>'
+            var geturlinfo = '<%=geturlinfo%>'
+    </script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="/js/checkout.js" defer></script>
+</head>
+<body>
+<div class="container mt-5 d-flex justify-content-center align-items-center">
+    <div class="card my-5">
+        <div class="card-header">
+            <div class="imgholder mb-5 position-relative">
+                <img src="/images/CompleteGreet/FavIcon.png" class=" rounded-circle" alt="">
+            </div>
+            <div class="checkoutinfo text-center">
+                <h5>Complete Greet</h5>
+                Subscription Plan:
+                <span class="font-weight-bold">
+                    <%=Plan.PName%>
+                </span>
+                <br>
+                Price:
+                <span class="font-weight-bold">
+                    <%if(Duration==12){ %>
+                    $<%=parseFloat(Duration*Plan.Price*0.8).toFixed(2);%>
+                    <% }else{%>
+                    $<%=Duration*Plan.Price%>
+                   <% }%>
+                </span>
+                <br>
+                Duration:
+                <span class="font-weight-bold">
+                    <%if(Duration==12){ %>
+                   1 Year
+                    <% }else{%>
+                    1 Month
+                   <% }%>
+                </span>
+            </div>
+        </div>
+        <div class="card-body">
+            <form id="payment-form">
+                <div id="payment-element">
+                    <!--Stripe.js injects the Payment Element-->
+                </div>
+                <button class="Button mt-3 mx-auto"  id="submit">
+                    <div class="spinner hidden" id="spinner"></div>
+                    <span id="button-text">Pay
+                        <%if(Duration==12){ %>
+                        $<%=parseFloat(Duration*Plan.Price*0.8).toFixed(2);%>
+                        <% }else{%>
+                        $<%=Duration*Plan.Price%>
+                        <% }%>
+                    </span>
+                </button>
+
+                <div id="payment-message" class="hidden text-center text-danger mt-2">
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+<!-- Display a payment form -->
+</div>
+<script>
+    const Plan = [{ Code: "<%=Plan.Code%>",Duration:"<%=Duration%>" }];
+
+</script>
+<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+<script type="application/javascript" src="/js/popper.min.js"></script>
+<script type="application/javascript" src="/js/bootstrap.min.js"></script>
+</body>
+</html>
